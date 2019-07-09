@@ -1,0 +1,30 @@
+﻿<Window x:Class="CheckerPricesRBT.View.LoginViewWind"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckerPricesRBT.View"
+        xmlns:vm="clr-namespace:CheckerPricesRBT.ViewModel"
+        mc:Ignorable="d"
+        Title="Вход" Height="250" Width="250" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    
+    <Window.DataContext>
+        <vm:LoginViewVM></vm:LoginViewVM>
+    </Window.DataContext>
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock TextAlignment="Center">RBT-CHECKER-PRICES 1.0</TextBlock>
+            <TextBox Text="{Binding _Login, UpdateSourceTrigger=PropertyChanged}" Margin="20" HorizontalAlignment="Center" Height="23"  TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+            <TextBlock TextAlignment="Center">Введите логин/пароль</TextBlock>
+            <!--<TextBox Text="{Binding SQLCentralConnection._Password, UpdateSourceTrigger=PropertyChanged}" Margin="20" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" Width="120" />-->
+            <PasswordBox x:Name="PasswordBox" Height="23" Margin="20" />
+            <Button Command="{Binding ConnectToSQL}" CommandParameter="{Binding ElementName=PasswordBox}" Content="Войти" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75"/>
+           
+            <!--<Button Content="Log in" Command="{Binding SigninCommand}" CommandParameter="{Binding ElementName=PasswordBox}" IsDefault="True" />-->
+
+        </StackPanel>
+
+
+    </Grid>
+</Window>

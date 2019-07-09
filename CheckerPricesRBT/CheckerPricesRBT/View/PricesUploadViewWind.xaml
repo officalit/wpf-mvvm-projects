@@ -1,0 +1,25 @@
+﻿<Window x:Class="CheckerPricesRBT.View.PricesUploadViewWind"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckerPricesRBT.View"
+        mc:Ignorable="d"
+        Title="Загрузка прайс-листа" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Margin="20, 0, 0, 0" Name="MenuTop" Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Height="22" Margin="10">Поиск:</TextBlock>
+                <Button Height="22" Width="80" Margin="0,14" Command="{Binding SaveCommand}">Загрузить</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBox Text="{Binding ParsedPrice.UploadPrices, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"></TextBox>
+        </Grid>
+    </Grid>
+</Window>
